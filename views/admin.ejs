@@ -1,0 +1,9 @@
+<h1 class="mt-4">Admin Dashboard</h1>
+<p class="lead mb-3">Welcome <%= user.name %>, to the adminstration page.</p>
+
+<p class="lead mb-3">Current Active Sessions:   (Amount:<%= sessions.length %>)</p>
+<% for (let i = 0; i < sessions.length; i++) { %>
+  <div>SessionID: <%= sessions[i] %><br>
+  UserID: <%= entireSession[sessions[i]].passport.user %><br>
+  <a href= "/admin/revoke/?key=<%= sessions[i] %>">Revoke Session</a></div>
+<% }; %>
